@@ -9,23 +9,35 @@
       </el-icon>
     </el-button>
     <div class="e-header-right">
-
-      <el-tooltip :content="!isFullScreen ? '全屏': '取消全屏'">
-        <el-button type="text" @click="toggleFullScreen">
-          <el-icon size="24"><full-screen /></el-icon>
+      <el-dropdown class="e-header-theme-menu">
+        <el-button type="text">
+          <span class="el-dropdown-link">
+            主题
+            <el-icon class="el-icon--right">
+              <arrow-down />
+            </el-icon>
+          </span>
         </el-button>
-      </el-tooltip>
-
-      <el-avatar
-        class="e-header-avatar"
-        :size="40"
-        src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-      ></el-avatar>
-
-      <el-dropdown class="e-header-right-menu" popper-class="e-header-dropdown-popper">
-        <span>
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item
+              v-for="theme in themeList"
+              :key="theme.key"
+              @click="changeTheme(theme.key)"
+              >
+              {{ theme.name }}
+            </el-dropdown-item>
+          </el-dropdown-menu>
+        </template>
+      </el-dropdown>
+      <el-dropdown class="e-header-user-menu" popper-class="e-header-dropdown-popper">
+        <el-avatar
+          class="e-header-avatar"
+          :size="40"
+          src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+        ></el-avatar>
+        <span class="e-header-username">
           Eviler
-          <el-icon><arrow-down /></el-icon>
         </span>
         <template #dropdown>
           <el-dropdown-menu>
@@ -41,7 +53,7 @@
 <script setup lang="ts">
 import useAppHelper from '@/hooks/useAppHelper'
 
-const { isFullScreen, isCollapse, toggleCollapse, toggleFullScreen } = useAppHelper()
+const { isCollapse, theme, themeList, toggleCollapse, changeTheme } = useAppHelper()
 
 </script>
 
@@ -57,11 +69,24 @@ const { isFullScreen, isCollapse, toggleCollapse, toggleFullScreen } = useAppHel
     display: flex;
     align-items: center;
     margin-left: auto;
-    .e-header-message, .e-header-avatar, .e-header-right-menu {
-      margin-left: 0.8rem;
+    height: 100%;
+    .e-header-theme-menu {
     }
-    .e-header-right-menu {
-      cursor: pointer;
+    .e-header-user-menu {
+      height: 100%;
+      .e-header-username {
+        margin-left: 0.6rem;
+      }
+      :deep(.el-tooltip__trigger) {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        cursor: pointer;
+        padding:0 0.6rem;
+        &:hover {
+          background-color: var(--e-avatar-bgcolor)
+        }
+      }
     }
   }
 }

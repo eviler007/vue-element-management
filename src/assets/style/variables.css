@@ -3,11 +3,12 @@
   --e-header-height: 4rem;
   --e-sidebar-width: 16rem;
   --e-sidebar-collapsed-width: 64px;
+  
+  --e-box-edge-size-default: 1.5rem;
+  --e-box-edge-size-small: 1rem;
+  --e-box-edge-size-large: 2rem;
 
   /* 动画 */
   --e-anim-speed-normal: .3s;
-
-  /* 颜色 */
-  --e-boxshadow-color: #aaa;
-  --e-bgcolor-main: #fff;
+  
 }

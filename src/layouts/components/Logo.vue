@@ -16,12 +16,12 @@ const { isCollapse } = useAppHelper()
 <style lang="scss" scoped>
 .e-logo {
   display: flex;
-  // justify-content: center;
   align-items: center;
   height: var(--e-header-height);
   line-height: var(--e-header-height);
   padding: 12px;
   overflow: hidden;
+  background-color: var(--e-bgcolor-main);
   .e-logo-btn {
     .e-logon-title {
       margin-left: 0.5rem;

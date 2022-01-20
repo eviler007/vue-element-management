@@ -1,8 +1,11 @@
-import { createStore } from 'vuex';
+import { createStore, Store } from 'vuex'
+import { StoreType } from '@/types/store'
 import app from './modules/app';
 
-export default createStore({
+const store: Store<StoreType> = createStore({
   modules: {
-    app: app
+    app
   }
 })
+
+export default store;

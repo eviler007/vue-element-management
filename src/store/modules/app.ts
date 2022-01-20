@@ -1,21 +1,18 @@
-import { AppType } from '@/types/app';
-import { fullScreen, exitFullScreen } from '@/utils/full-screen'
+import { AppType } from '@/types/store'
+import { defaultTheme, changeTheme, themeList } from '@/themes'
 
 const state: AppType = {
-  isFullScreen: false,
-  isCollapse: false
+  isCollapse: false,
+  theme: defaultTheme,
+  themeList: themeList
 }
 const mutations = {
-  toggleFullScreen(state: AppType) {
-    state.isFullScreen = !state.isFullScreen
-    if (state.isFullScreen) {
-      fullScreen()
-    } else {
-      exitFullScreen()
-    }
-  },
   toggleCollapse(state: AppType) {
     state.isCollapse = !state.isCollapse
+  },
+  changeTheme(state: AppType, theme: string) {
+    state.theme = theme
+    changeTheme(theme)
   }
 }
 

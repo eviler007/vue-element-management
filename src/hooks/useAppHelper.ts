@@ -3,13 +3,14 @@ import { useStore } from 'vuex'
 
 export default () => {
   const store = useStore();
-  const { isFullScreen, isCollapse } = toRefs(store.state.app)
-  const toggleFullScreen = () => { store.commit('app/toggleFullScreen') }
+  const { isCollapse, theme, themeList } = toRefs(store.state.app)
   const toggleCollapse = () => { store.commit('app/toggleCollapse') }
+  const changeTheme = (data: any) => { store.commit('app/changeTheme', data) }
   return {
-    isFullScreen,
     isCollapse,
-    toggleFullScreen,
-    toggleCollapse
+    theme,
+    themeList,
+    toggleCollapse,
+    changeTheme
   }
 }

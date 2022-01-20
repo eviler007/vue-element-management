@@ -1,8 +1,8 @@
-import { UserType } from '@/types/user';
+import { UserType } from '@/types/store';
 
 const state: UserType = {
-  userid: '',
-  username: '',
+  userid: '123123123',
+  username: 'Eviler',
   permissionList: []
 }
 

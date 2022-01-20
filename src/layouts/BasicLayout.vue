@@ -52,7 +52,6 @@ const { isCollapse } = useAppHelper()
       left: var(--e-sidebar-width);
       width: calc(100% - var(--e-sidebar-width));
       background: var(--e-bgcolor-main);
-      z-index: 2;
     }
     .e-main-wrapper {
       margin-top: var(--e-header-height);
