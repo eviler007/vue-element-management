@@ -1,11 +1,10 @@
-import { createStore, Store } from 'vuex'
 import { AppType } from '@/types/app';
 import { fullScreen, exitFullScreen } from '@/utils/full-screen'
 
-const state: AppType = () => ({
+const state: AppType = {
   isFullScreen: false,
   isCollapse: false
-})
+}
 const mutations = {
   toggleFullScreen(state: AppType) {
     state.isFullScreen = !state.isFullScreen

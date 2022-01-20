@@ -1,39 +1,31 @@
 <template>
-  <header class="header">
+  <header class="e-header">
     <el-button
-      class="collapse-btn"
+      class="e-collapse-btn"
       type="text"
       @click="toggleCollapse">
-      <el-icon size="22" color="#fff">
-        <component :is="isCollapse ? Expand : Fold"></component>
+      <el-icon size="22">
+        <component :is="isCollapse ? 'Expand' : 'Fold'"></component>
       </el-icon>
     </el-button>
-    <h1 class="logo">后台管理系统</h1>
-    <div class="header-right">
+    <div class="e-header-right">
+
       <el-tooltip :content="!isFullScreen ? '全屏': '取消全屏'">
         <el-button type="text" @click="toggleFullScreen">
-          <el-icon size="24" color="#fff"><full-screen /></el-icon>
+          <el-icon size="24"><full-screen /></el-icon>
         </el-button>
       </el-tooltip>
-      <el-badge class="header-message" is-dot>
-        <el-tooltip>
-          <el-button type="text">
-            <el-icon size="24" color="#fff"><bell /></el-icon>
-          </el-button>
-          <template #content>
-            您有<span style="color: var(--el-color-danger)">800</span>条未读消息
-          </template>
-        </el-tooltip>
-      </el-badge>
+
       <el-avatar
-        class="header-avatar"
+        class="e-header-avatar"
         :size="40"
         src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
       ></el-avatar>
-      <el-dropdown class="header-right-menu" popper-class="header-dropdown-popper">
+
+      <el-dropdown class="e-header-right-menu" popper-class="e-header-dropdown-popper">
         <span>
           Eviler
-          <el-icon color="#fff"><arrow-down /></el-icon>
+          <el-icon><arrow-down /></el-icon>
         </span>
         <template #dropdown>
           <el-dropdown-menu>
@@ -47,7 +39,6 @@
 </template>
 
 <script setup lang="ts">
-import { Expand, Fold, FullScreen, Bell, ArrowDown } from '@element-plus/icons-vue'
 import useAppHelper from '@/hooks/useAppHelper'
 
 const { isFullScreen, isCollapse, toggleCollapse, toggleFullScreen } = useAppHelper()
@@ -55,34 +46,29 @@ const { isFullScreen, isCollapse, toggleCollapse, toggleFullScreen } = useAppHel
 </script>
 
 <style lang="scss" scoped>
-.header {
+.e-header {
   display: flex;
   align-items: center;
+  height: var(--e-header-height);
   width: 100%;
-  background-color: #242f42;
-  color: #fff;
   padding: 0 1rem;
-  .logo {
-    font-size: 1.4rem;
-    margin-left: 1rem;
-  }
-  .header-right {
+  box-shadow: 3px 0px 4px 0px var(--e-boxshadow-color);
+  .e-header-right {
     display: flex;
     align-items: center;
     margin-left: auto;
-    .header-message, .header-avatar, .header-right-menu {
+    .e-header-message, .e-header-avatar, .e-header-right-menu {
       margin-left: 0.8rem;
     }
-    .header-right-menu {
+    .e-header-right-menu {
       cursor: pointer;
-      color: #fff;
     }
   }
 }
 </style>
 
 <style>
-.header-dropdown-popper {
+.e-header-dropdown-popper {
   white-space: nowrap;
 }
 </style>

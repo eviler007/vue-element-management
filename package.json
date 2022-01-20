@@ -1,5 +1,6 @@
 {
   "name": "vue-element-management",
+  "description": "vue3 + vite + ts + element-plus 仿 Ant Design Pro免费版",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
