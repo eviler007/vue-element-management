@@ -9,13 +9,13 @@ export interface ThemeType extends Object {
 }
 const themeList: ThemeType[] = [
   {
-    key: 'default', name: '拂晓蓝', color: '#409eff'
+    key: 'default', name: 'Daybreak Blue', color: '#409eff'
   },
   {
-    key: 'red', name: '薄暮', color: '#f5222d'
+    key: 'red', name: 'Dust Red', color: '#f5222d'
   },
   {
-    key: 'purple', name: '酱紫', color: '#9C27B0'
+    key: 'purple', name: 'Golden Purple', color: '#9C27B0'
   }
 ]
 const defaultTheme: string = themeList[0].key

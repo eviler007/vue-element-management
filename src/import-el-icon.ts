@@ -1,8 +1,12 @@
-import { App } from 'Vue'
+import { App } from 'vue'
+import svgToComponent from '@/utils/svgToComponent'
 
 import {
-  HomeFilled, Edit, Expand, Fold, FullScreen, ArrowDown, Eleme, List
+  HomeFilled, Edit, Expand, Fold, FullScreen, ArrowDown, Eleme, List,
+  User, Setting
 } from '@element-plus/icons-vue'
+
+import logoutSvg from '@/assets/svgs/logout.svg?raw'
 
 export default (app: App<Element>) => {
   app.component(HomeFilled.name, HomeFilled)
@@ -13,4 +17,7 @@ export default (app: App<Element>) => {
     .component(ArrowDown.name, ArrowDown)
     .component(Eleme.name, Eleme)
     .component(List.name, List)
+    .component(User.name, User)
+    .component(Setting.name, Setting)
+    .component('Logout', svgToComponent(logoutSvg, 'Logout'))
 }

@@ -12,7 +12,7 @@
       <el-dropdown class="e-header-theme-menu">
         <el-button type="text">
           <span class="el-dropdown-link">
-            主题色
+            Theme Color
             <el-icon class="el-icon--right">
               <arrow-down />
             </el-icon>
@@ -42,15 +42,24 @@
         <el-avatar
           class="e-header-avatar"
           :size="40"
-          src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+          :src="avatar"
         ></el-avatar>
         <span class="e-header-username">
-          Eviler
+          {{ username }}
         </span>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item>项目仓库</el-dropdown-item>
-            <el-dropdown-item>退出登陆</el-dropdown-item>
+            <el-dropdown-item>
+              <el-icon><user /></el-icon>Acount Center
+            </el-dropdown-item>
+            <el-dropdown-item>
+              <el-icon><setting /></el-icon>Acount Setting
+            </el-dropdown-item>
+            <el-dropdown-item divided>
+              <el-icon >
+                <logout />
+              </el-icon>Logout
+            </el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>
@@ -59,9 +68,11 @@
 </template>
 
 <script setup lang="ts">
-import useAppHelper from '@/hooks/useAppHelper'
+import useAppStore from '@/hooks/useAppStore'
+import useUserStore from '@/hooks/useUserStore'
 
-const { isCollapse, theme, themeList, toggleCollapse, changeTheme } = useAppHelper()
+const { isCollapse, theme, themeList, toggleCollapse, changeTheme } = useAppStore()
+const { avatar, username } = useUserStore()
 
 </script>
 

@@ -8,8 +8,8 @@
 </template>
 
 <script setup lang="ts">
-import useAppHelper from '@/hooks/useAppHelper'
-const { isCollapse } = useAppHelper()
+import useAppStore from '@/hooks/useAppStore'
+const { isCollapse } = useAppStore()
 
 </script>
 
@@ -21,7 +21,7 @@ const { isCollapse } = useAppHelper()
   line-height: var(--e-header-height);
   padding: 12px;
   overflow: hidden;
-  background-color: var(--e-side_header-bg-color);
+  background-color: var(--e-layout-bg-color);
   .e-logo-btn {
     .e-logon-title {
       margin-left: 0.5rem;

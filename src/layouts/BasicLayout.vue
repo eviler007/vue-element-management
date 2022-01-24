@@ -17,12 +17,12 @@
 </template>
 
 <script setup lang="ts">
-import useAppHelper from '@/hooks/useAppHelper'
+import useAppStore from '@/hooks/useAppStore'
 
 import EHeader from '@/layouts/components/Header.vue'
 import ESidebar from '@/layouts/components/Sidebar.vue'
 
-const { isCollapse } = useAppHelper()
+const { isCollapse } = useAppStore()
 
 </script>
 
@@ -51,7 +51,7 @@ const { isCollapse } = useAppHelper()
       top: 0;
       left: var(--e-sidebar-width);
       width: calc(100% - var(--e-sidebar-width));
-      background: var(--e-side_header-bg-color);
+      background: var(--e-layout-bg-color);
     }
     .e-main-wrapper {
       margin-top: var(--e-header-height);

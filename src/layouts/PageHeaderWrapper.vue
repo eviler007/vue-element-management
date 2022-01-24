@@ -39,6 +39,7 @@ const slotContent = !!useSlots().content
   .e-page-header {
     padding: var(--e-box-edge-size-default);
     box-shadow: 0 -2px 4px 0 var(--e-boxshadow-color);
+    background-color: var(--e-layout-bg-color);
     .e-page-header-breadcrumb {
 
     }

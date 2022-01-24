@@ -148,7 +148,7 @@ export const routes: RouteRecordRaw[] = [
     path: '/',
     name: 'home',
     component: BasicLayout,
-    redirect: '/dashboard/analysis',
+    redirect: '/dashboard',
     meta: {
       title: 'Home'
     },
