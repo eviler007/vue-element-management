@@ -21,7 +21,7 @@ const { isCollapse } = useAppHelper()
   line-height: var(--e-header-height);
   padding: 12px;
   overflow: hidden;
-  background-color: var(--e-bgcolor-main);
+  background-color: var(--e-side_header-bg-color);
   .e-logo-btn {
     .e-logon-title {
       margin-left: 0.5rem;

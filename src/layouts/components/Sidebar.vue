@@ -35,7 +35,7 @@ const currActive = toRef(useRoute(), 'path')
 
 .e-sidebar {
   box-shadow: 0px 0px 4px 0px var(--e-boxshadow-color);
-  background-color: var(--e-bgcolor-main);
+  background-color: var(--e-side_header-bg-color);
   .e-sidebar-menu {
     width: 100%;
     border: none;

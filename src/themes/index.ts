@@ -1,20 +1,24 @@
 import default_theme from './default.css'
-import dark_theme from './dark.css'
-
-const defaultTheme: string = 'default'
+import red_theme from './red.css'
+import purple_theme from './purple.css'
 
 export interface ThemeType extends Object {
   key: string,
-  name: string
+  name: string,
+  color: string
 }
 const themeList: ThemeType[] = [
   {
-    key: 'default', name: '默认'
+    key: 'default', name: '拂晓蓝', color: '#409eff'
   },
   {
-    key: 'dark', name: '暗黑'
+    key: 'red', name: '薄暮', color: '#f5222d'
+  },
+  {
+    key: 'purple', name: '酱紫', color: '#9C27B0'
   }
 ]
+const defaultTheme: string = themeList[0].key
 const themeListKeys = themeList.map(item => item.key)
 
 const changeTheme = (type: string) => {
@@ -24,8 +28,11 @@ const changeTheme = (type: string) => {
     case 'default':
       themeModule = default_theme
       break;
-    case 'dark':
-      themeModule = dark_theme
+    case 'red':
+      themeModule = red_theme
+      break;
+    case 'purple':
+      themeModule = purple_theme
       break;
     default:
       break;
@@ -44,6 +51,7 @@ const changeTheme = (type: string) => {
     /* @ts-ignore */
     document.documentElement.style.setProperty(item, cssVarMap[item])
   })
+  return type
 }
 
 export {

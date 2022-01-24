@@ -12,7 +12,7 @@
       <el-dropdown class="e-header-theme-menu">
         <el-button type="text">
           <span class="el-dropdown-link">
-            主题
+            主题色
             <el-icon class="el-icon--right">
               <arrow-down />
             </el-icon>
@@ -25,12 +25,20 @@
               :key="theme.key"
               @click="changeTheme(theme.key)"
               >
-              {{ theme.name }}
+              <span :style="{
+                display: 'inline-block',
+                width: '12px',
+                height: '12px',
+                marginRight: '6px',
+                borderRadius: '2px',
+                backgroundColor: theme.color
+              }"></span>
+              <span>{{ theme.name }}</span>
             </el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>
-      <el-dropdown class="e-header-user-menu" popper-class="e-header-dropdown-popper">
+      <el-dropdown class="e-header-user-menu" popper-class="e-header-user-menu-popper">
         <el-avatar
           class="e-header-avatar"
           :size="40"
@@ -92,8 +100,8 @@ const { isCollapse, theme, themeList, toggleCollapse, changeTheme } = useAppHelp
 }
 </style>
 
-<style>
-.e-header-dropdown-popper {
+<style lang="scss">
+.e-header-user-menu-popper {
   white-space: nowrap;
 }
 </style>

@@ -1,14 +1,14 @@
 theme {
-  --el-color-primary: #409eff;
-  --el-color-primary-light-1: #53a8ff;
-  --el-color-primary-light-2: #66b1ff;
-  --el-color-primary-light-3: #79bbff;
-  --el-color-primary-light-4: #8cc5ff;
-  --el-color-primary-light-5: #a0cfff;
-  --el-color-primary-light-6: #b3d8ff;
-  --el-color-primary-light-7: #c6e2ff;
-  --el-color-primary-light-8: #d9ecff;
-  --el-color-primary-light-9: #ecf5ff;
+  --el-color-primary: #9C27B0;
+  --el-color-primary-light-1: #4A148C;
+  --el-color-primary-light-2: #6A1B9A;
+  --el-color-primary-light-3: #7B1FA2;
+  --el-color-primary-light-4: #8E24AA;
+  --el-color-primary-light-5: #AB47BC;
+  --el-color-primary-light-6: #BA68C8;
+  --el-color-primary-light-7: #CE93D8;
+  --el-color-primary-light-8: #E1BEE7;
+  --el-color-primary-light-9: #F3E5F5;
   --el-color-success: #67c23a;
   --el-color-success-light: #e1f3d8;
   --el-color-success-lighter: #f0f9eb;
@@ -25,6 +25,6 @@ theme {
   --el-color-info-light: #e9e9eb;
   --el-color-info-lighter: #f4f4f5;
   --el-bg-color: #f5f7fa;
-  
-  --el-btn-active-color: #3a8ee6;
+
+  --el-btn-active-color: #AA00FF;
 }

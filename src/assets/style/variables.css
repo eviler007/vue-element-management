@@ -11,4 +11,8 @@
   /* 动画 */
   --e-anim-speed-normal: .3s;
   
+  /* 颜色 */
+  --e-boxshadow-color: rgba(0, 0, 0, 0.12);
+  --e-side_header-bg-color: #fff;
+  --e-avatar-bgcolor: #fafafa;
 }
