@@ -4,9 +4,10 @@
   --e-sidebar-width: 16rem;
   --e-sidebar-collapsed-width: 64px;
   
-  --e-box-edge-size-default: 1.5rem;
-  --e-box-edge-size-small: 1rem;
-  --e-box-edge-size-large: 2rem;
+  --e-box-edge-size-default: 24px;
+  --e-box-edge-size-small: 16px;
+  --e-box-edge-size-mini: 8px;
+  --e-box-edge-size-large: 28px;
 
   /* 动画 */
   --e-anim-speed-normal: .3s;

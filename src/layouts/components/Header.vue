@@ -42,7 +42,7 @@
         <el-avatar
           class="e-header-avatar"
           :size="40"
-          :src="avatar"
+          :src="avatarUrl"
         ></el-avatar>
         <span class="e-header-username">
           {{ username }}
@@ -72,7 +72,7 @@ import useAppStore from '@/hooks/useAppStore'
 import useUserStore from '@/hooks/useUserStore'
 
 const { isCollapse, theme, themeList, toggleCollapse, changeTheme } = useAppStore()
-const { avatar, username } = useUserStore()
+const { username, avatarUrl } = useUserStore()
 
 </script>
 

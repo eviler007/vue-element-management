@@ -13,24 +13,52 @@
           </el-breadcrumb>
         </slot>
       </div>
+
+      <div v-if="title !== false" class="e-page-header-title">
+        {{ !!title && typeof title === 'string' && title || defaultTitle }}
+      </div>
+
+      <div v-if="subTitle" class="e-page-header-subtitle">
+        {{ subTitle }}
+      </div>
+
       <div v-if="slotContent" class="e-page-header-content">
         <slot name="content">
         </slot>
       </div>
     </div>
+
     <div class="e-page-wrapper">
       <slot name="default"></slot>
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
 import { useRoute } from 'vue-router'
-import { useSlots } from 'vue'
+import { defineComponent, useSlots } from 'vue'
 
-const routeList = useRoute().matched
-
-const slotContent = !!useSlots().content
+export default defineComponent({
+  props: {
+    title: {
+      type: [String, Boolean],
+      default: true
+    },
+    subTitle: {
+      type: String
+    }
+  },
+  setup() {
+    const routeList = useRoute().matched
+    const slotContent = !!useSlots().content
+    const defaultTitle = routeList[0].meta.title
+    return {
+      routeList,
+      slotContent,
+      defaultTitle
+    }
+  }
+})
 
 </script>
 
@@ -41,10 +69,20 @@ const slotContent = !!useSlots().content
     box-shadow: 0 -2px 4px 0 var(--e-boxshadow-color);
     background-color: var(--e-layout-bg-color);
     .e-page-header-breadcrumb {
-
+      :deep(.el-breadcrumb) .el-breadcrumb__inner{
+        font-weight: normal;
+      }
+    }
+    .e-page-header-title {
+      padding-top: var(--e-box-edge-size-small);
+      font-weight: bold;
+    }
+    .e-page-header-subtitle {
+      padding-top: var(--e-box-edge-size-mini);
+      color: var(--el-color-info);
     }
     .e-page-header-content {
-      padding: var(--e-box-edge-size-small) 0;
+      padding-top: var(--e-box-edge-size-small);
     }
   } 
   .e-page-wrapper {

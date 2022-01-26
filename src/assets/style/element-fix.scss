@@ -1,6 +1,9 @@
 // 覆盖element-plus默认样式/修复未使用变量导致的主题颜色问题
-.el-button--text:active {
+.el-button:active {
   color: var(--el-btn-active-color);
+}
+.el-button:not(.el-button--text):active {
+  border-color: var(--el-btn-active-color);
 }
 .el-menu-item.is-active {
   color: var(--el-color-white);

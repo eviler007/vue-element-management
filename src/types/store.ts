@@ -9,7 +9,7 @@ export interface AppType extends Object {
 export interface UserType extends Object {
   userid: string,
   username: string,
-  avatar: string,
+  avatarUrl: string,
   permissionList: Array<string>
 }
 

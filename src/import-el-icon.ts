@@ -3,7 +3,7 @@ import svgToComponent from '@/utils/svgToComponent'
 
 import {
   HomeFilled, Edit, Expand, Fold, FullScreen, ArrowDown, Eleme, List,
-  User, Setting
+  User, Setting, Plus
 } from '@element-plus/icons-vue'
 
 import logoutSvg from '@/assets/svgs/logout.svg?raw'
@@ -19,5 +19,6 @@ export default (app: App<Element>) => {
     .component(List.name, List)
     .component(User.name, User)
     .component(Setting.name, Setting)
+    .component(Plus.name, Plus)
     .component('Logout', svgToComponent(logoutSvg, 'Logout'))
 }
