@@ -15,7 +15,7 @@ jobs:
     - name: Add CNAME File
       run: | 
         cd ./dist
-        echo "admin.eviler.top" > CNAME
+        echo "admin-demo.eviler.top" > CNAME
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@4.1.0
       with:
