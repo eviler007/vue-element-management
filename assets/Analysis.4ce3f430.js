@@ -1,0 +1,1 @@
+import{P as e}from"./PageHeaderWrapper.29ad9896.js";import{d as a,o as r,c as t,w as o,j as s}from"./vendor.5b9a5bf5.js";import"./index.ec471b08.js";const n=s(" Analysis "),l=a({setup(p){return(c,d)=>(r(),t(e,null,{default:o(()=>[n]),_:1}))}});export{l as default};

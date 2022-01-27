@@ -1,0 +1,1 @@
+import{_ as r}from"./index.ec471b08.js";import"./vendor.5b9a5bf5.js";const e={};function c(t,n){return" \u641C\u7D22\u5217\u8868\uFF08\u9879\u76EE\uFF09 "}var s=r(e,[["render",c]]);export{s as default};
